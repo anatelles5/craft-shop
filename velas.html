@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Telles Art - Velas</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="Untitled Project.jpg" type="image/png">
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header class="header"></header>
+
+    <nav class="navbar">
+        <a href="index.html">
+            <img src="home.png" alt="Home">
+        </a>
+
+        <a href="velas.html" id="velas">
+            Velas Aromáticas
+        </a>
+
+        <a href="croche.html" id="croche">
+            Crochê
+        </a>
+    </nav>
+
+    <!-- Botão flutuante -->
+    <a href="form.html" id="helpBtn" target="_blank">
+        <img src="ideal p vc.jpg"
+             alt="Descubra a vela ideal para você">
+    </a>
+
+    <main class="pagina-catalogo">
+
+        <h1>Catálogo de Velas</h1>
+
+        <div class="catalogo">
+
+            <div class="card">
+
+                <img src="vela-lavanda.jpg"
+                     alt="Vela aromática de 60g">
+
+                <h3>Vela Aromática 60g</h3>
+
+                <p class="descricao">
+                    Escolha um aroma para ver a descrição.
+                </p>
+
+                <div class="price">R$ 14,00</div>
+
+                <select class="aroma">
+                    <option value="">Selecione o aroma</option>
+                    <option value="lavanda">Lavanda</option>
+                    <option value="eucalipto">Eucalipto</option>
+                </select>
+
+                <a href="#" class="btn" onclick="abrirModal(); return false;">
+                    Comprar
+                </a>
+
+            </div>
+
+            <div class="card">
+
+                <img src="vela-lavanda.jpg"
+                     alt="Vela aromática de 90g">
+
+                <h3>Vela Aromática 90g</h3>
+
+                <p class="descricao">
+                    Escolha um aroma para ver a descrição.
+                </p>
+
+                <div class="price">R$ 16,95</div>
+
+                <select class="aroma">
+                    <option value="">Selecione o aroma</option>
+                    <option value="lavanda">Lavanda</option>
+                    <option value="eucalipto">Eucalipto</option>
+                </select>
+
+                <a href="#" class="btn" onclick="abrirModal(); return false;">
+                    Comprar
+                </a>
+
+            </div>
+
+            <div class="card">
+
+                <img src="velas100.jpeg"
+                     alt="Vela personalizada de 100g">
+
+                <h3>Vela Personalizada de 100g</h3>
+
+                <p class="descricao">
+                    Escolha aroma e formato para ver a descrição.
+                </p>
+
+                <div class="price">R$ 21,00</div>
+
+                <select class="aroma">
+                    <option value="">Selecione o aroma</option>
+                    <option value="lavanda">Lavanda</option>
+                    <option value="eucalipto">Eucalipto</option>
+                </select>
+
+                <select class="formato">
+                    <option value="">Selecione o formato</option>
+                    <option value="rosa">Com Rosa</option>
+                    <option value="bebe">Com Bebê</option>
+                    <option value="laco">Com Laço</option>
+                </select>
+
+                <a href="#" class="btn" onclick="abrirModal(); return false;">
+                    Comprar
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+<!-- POPUP DA LOJA INATIVA -->
+
+<div class="modal-overlay" id="modalLoja">
+
+    <div class="modal">
+
+        <button class="fechar" onclick="fecharModal()"
+                aria-label="Fechar popup">
+            &times;
+        </button>
+
+        <h2>Que pena!</h2>
+
+        <h3>A loja está inativa</h3>
+
+        <p>
+            Você deveria ser direcionado para finalizar sua compra...
+            mas infelizmente a Telles Art está inativa.
+        </p>
+
+        <p>
+            Atualmente, este site serve apenas como um
+            projeto do meu portfólio de desenvolvimento.
+        </p>
+
+        <p><strong>Obrigada pelo interesse!</strong></p>
+
+        <button class="btn-fechar" onclick="fecharModal()">
+            Entendi!
+        </button>
+
+    </div>
+
+</div>
+
+</body>
+</html>

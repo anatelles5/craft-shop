@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Telles Art - Crochê</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="Untitled Project.jpg" type="image/png">
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header class="header"></header>
+
+    <nav class="navbar">
+        <a href="index.html">
+            <img src="home.png" alt="Home">
+        </a>
+
+        <a href="velas.html" id="velas">
+            Velas Aromáticas
+        </a>
+
+        <a href="croche.html" id="croche">
+            Crochê
+        </a>
+    </nav>
+
+    <main class="pagina-catalogo">
+
+        <h1>Catálogo de Crochê</h1>
+
+        <div class="catalogo">
+
+            <!-- Produto 1 -->
+            <div class="card">
+
+                <div class="imagem-container">
+
+                    <img src="porta copos simples.png"
+                         class="img1"
+                         alt="Porta copo simples em crochê">
+
+                    <img src="porta copo simples.jpg"
+                         class="img2"
+                         alt="Detalhe do porta copo simples em crochê">
+
+                </div>
+
+                <h3>Porta Copo/Vela Simples</h3>
+
+                <p>
+                    Enfeite seus momentos com este porta-copo
+                    circular em crochê, que irá dar um charme
+                    minimalista a mais abaixo da sua vela.
+                </p>
+
+                <div class="price">R$ 4,00</div>
+
+                <a href="#" class="btn" onclick="abrirModal(); return false;">
+                     Comprar
+                </a>
+
+            </div>
+
+            <!-- Produto 2 -->
+            <div class="card">
+
+                <div class="imagem-container">
+
+                    <img src="porta copos trançado roxo.png"
+                         class="img1"
+                         alt="Porta copo trabalhado em crochê">
+
+                    <img src="pota copo trançado.jpg"
+                         class="img2"
+                         alt="Detalhe do porta copo trançado roxo">
+
+                </div>
+
+                <h3>Porta Copo/Vela Trabalhado</h3>
+
+                <p>
+                    Decore ainda mais o seu ambiente com este
+                    lindo porta-copo circular em crochê,
+                    com um delicado detalhe trançado.
+                </p>
+
+                <div class="price">R$ 8,00</div>
+
+                <a href="#" class="btn" onclick="abrirModal(); return false;">
+                    Comprar
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+<!-- POPUP DA LOJA INATIVA -->
+
+<div class="modal-overlay" id="modalLoja">
+
+    <div class="modal">
+
+        <button class="fechar" onclick="fecharModal()"
+                aria-label="Fechar popup">
+            &times;
+        </button>
+
+        <h2>Que pena!</h2>
+
+        <h3>A loja está inativa</h3>
+
+        <p>
+            Você deveria ser direcionado para finalizar sua compra...
+            mas infelizmente a Telles Art está inativa.
+        </p>
+
+        <p>
+            Atualmente, este site serve apenas como um
+            projeto do meu portfólio de desenvolvimento.
+        </p>
+
+        <p><strong>Obrigada pelo interesse!</strong></p>
+
+        <button class="btn-fechar" onclick="fecharModal()">
+            Entendi!
+        </button>
+
+    </div>
+
+</div>
+
+</body>
+</html>

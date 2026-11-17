@@ -1,0 +1,386 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Telles Art - Encontre sua vela ideal</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="Untitled Project.jpg" type="image/png">
+
+    <script src="script.js" defer></script>
+
+    <style>
+
+        .form {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 0 15px;
+        }
+
+        .form h2 {
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .group {
+            margin-bottom: 1.5rem;
+        }
+
+        .group p {
+            margin-bottom: 10px;
+        }
+
+        .group label {
+            display: inline-block;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+
+        .result {
+            margin-top: 1.5rem;
+            padding: 1.2rem;
+            background: #f3f3f3;
+            border-radius: 8px;
+            line-height: 1.5;
+        }
+
+        .recommendation-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 15px;
+        }
+
+        .recommendation-card img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+
+        .recommendation-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .recommendation-card p {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .buy-button {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 0.5rem 1rem;
+            background-color: #a87dff;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .buy-button:hover {
+            background-color: #8e61e6;
+        }
+
+        #descubra {
+            display: inline-block;
+            margin-top: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            background-color: #bfa5f3;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #descubra:hover {
+            background-color: #a87dff;
+        }
+
+        @media (max-width: 500px) {
+
+            .recommendation-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .recommendation-card img {
+                width: 100%;
+                height: 180px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header class="header"></header>
+
+    <nav class="navbar">
+
+        <a href="index.html">
+            <img src="home.png" alt="Home">
+        </a>
+
+        <a href="velas.html" id="velas">
+            Velas Aromáticas
+        </a>
+
+        <a href="croche.html" id="croche">
+            Crochê
+        </a>
+
+    </nav>
+
+
+    <main class="form">
+
+        <h2>Encontre sua vela aromática ideal:</h2>
+
+        <div class="group">
+
+            <p><strong>Qual o seu objetivo?</strong></p>
+
+            <label>
+                <input type="radio" name="goal" value="relax">
+                Relaxar e desestressar
+            </label>
+
+            <br>
+
+            <label>
+                <input type="radio" name="goal" value="focus">
+                Focar, estudar ou trabalhar
+            </label>
+
+        </div>
+
+
+        <div class="group">
+
+            <p><strong>Que tipo de aroma você deseja?</strong></p>
+
+            <label>
+                <input type="radio" name="style" value="cozy">
+                Algo aconchegante ou tradicional
+            </label>
+
+            <br>
+
+            <label>
+                <input type="radio" name="style" value="sophisticated">
+                Algo sofisticado
+            </label>
+
+        </div>
+
+
+        <button id="descubra" type="button" onclick="recommend()">
+            Descubra aqui
+        </button>
+
+
+        <div id="output" class="result">
+
+            Escolha suas preferências para descobrir
+            qual aroma combina com você!
+
+        </div>
+
+    </main>
+
+
+    <script>
+
+        /* ========================================
+           RECOMENDAÇÕES DE AROMAS
+        ======================================== */
+
+        const recommendations = {
+
+            relax: {
+
+                cozy: {
+
+                    name: "Lavanda",
+
+                    desc: "Um aroma relaxante que pode diminuir o estresse e até melhorar o seu sono. Sem falar que o cheirinho é um clássico delicioso.",
+
+                    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFS1vj4TNutZW6cpsSuruZuNVzgBctg_A8YO2kFq-gRA&s=10"
+
+                },
+
+
+                sophisticated: {
+
+                    name: "Chá branco",
+
+                    desc: "Atemporal e elegante, a fragrância de Chá Branco tem efeito relaxante, reduz a ansiedade e promove uma atmosfera de paz e leveza.",
+
+                    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsKzf_xE9EP0E44ONA6abYuRYghdqlc9hW2yglJRzPNg&s=10"
+
+                }
+
+            },
+
+
+            focus: {
+
+                cozy: {
+
+                    name: "Café",
+
+                    desc: "O aroma gostoso de café pode ajudar a melhorar a concentração e a energia. Seu cheiro é associado a sensações de conforto e familiaridade.",
+
+                    img: "https://upload.wikimedia.org/wikipedia/commons/4/45/A_small_cup_of_coffee.JPG"
+
+                },
+
+
+                sophisticated: {
+
+                    name: "Eucalipto",
+
+                    desc: "Ótimo para deixar o ambiente mais sofisticado enquanto te ajuda a ter mais foco, clareza mental, além de também ser descongestionante e revigorante!",
+
+                    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkZWMoovT_g3OS281FrC5xo3we0n2AyBdzLAz1YEV3TA&s=10"
+
+                }
+
+            }
+
+        };
+
+
+        /* ========================================
+           FUNÇÃO DE RECOMENDAÇÃO
+        ======================================== */
+
+        function recommend() {
+
+            const goal = document.querySelector(
+                'input[name="goal"]:checked'
+            );
+
+            const style = document.querySelector(
+                'input[name="style"]:checked'
+            );
+
+            const output = document.getElementById("output");
+
+
+            // Verifica se todas as opções foram selecionadas
+
+            if (!goal || !style) {
+
+                output.innerHTML =
+                    "<strong>Por favor, selecione as opções acima.</strong>";
+
+                return;
+
+            }
+
+
+            // Busca a recomendação correspondente
+
+            const item = recommendations[goal.value][style.value];
+
+
+            // Monta o resultado
+
+            output.innerHTML = `
+
+                <strong>
+                    Com base nas suas respostas,
+                    recomendamos nossa vela aromática de:
+                </strong>
+
+                <div class="recommendation-card">
+
+                    <img
+                        src="${item.img}"
+                        alt="${item.name}"
+                        loading="lazy"
+                    >
+
+                    <div>
+
+                        <h3>${item.name}</h3>
+
+                        <p>${item.desc}</p>
+
+                        <button
+                            class="buy-button"
+                            type="button"
+                            onclick="abrirModal()"
+                        >
+                            Ver no catálogo
+                        </button>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+
+    </script>
+
+
+    <!-- POPUP DA LOJA INATIVA -->
+
+    <div class="modal-overlay" id="modalLoja">
+
+        <div class="modal">
+
+            <button
+                class="fechar"
+                onclick="fecharModal()"
+                aria-label="Fechar popup"
+            >
+                &times;
+            </button>
+
+            <h2>Que pena!</h2>
+
+            <h3>A loja está inativa</h3>
+
+            <p>
+                Você deveria ser direcionado para finalizar sua compra...
+                mas infelizmente a Telles Art está inativa.
+            </p>
+
+            <p>
+                Atualmente, este site serve apenas como um
+                projeto do meu portfólio de desenvolvimento.
+            </p>
+
+            <p><strong>Obrigada pelo interesse!</strong></p>
+
+            <button
+                class="btn-fechar"
+                onclick="fecharModal()">
+                Entendi!
+            </button>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
