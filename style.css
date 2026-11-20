@@ -76,6 +76,86 @@ body {
     transform: scale(1.1);
 }
 
+/*CONFIG DA TELA INICIAL*/
+.apresentaçao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 80vh;
+    padding: 40px;
+    gap: 30px;
+}
+
+.apresentaçao-text {
+    flex: 1;
+    min-width: 0;
+    padding: 20px;
+}
+
+.apresentaçao-img {
+    flex: 1;
+    min-width: 0;
+    height: 450px;
+}
+
+.apresentaçao-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+/* PRINCIPAIS DÚVIDAS */
+
+.faq-section {
+    background-color: #c9bee8;
+    padding: 35px 5%;
+}
+
+.faq-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.faq-container h2 {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.faq-cards {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.faq-card {
+    display: block;
+    width: 210px;
+    aspect-ratio: 1.45 / 1;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.faq-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.faq-card:hover {
+    transform: translateY(-5px);
+}
 
 /* BOTÃO FLUTUANTE - VELA IDEAL */
 
@@ -318,7 +398,20 @@ select {
         right: 15px;
         bottom: 15px;
     }
+    .faq-section {
+        padding: 30px 20px;
+    }
 
+    .faq-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .faq-card {
+        width: 100%;
+        border-radius: 15px;
+    }
 }
 
 /* POPUP - LOJA INATIVA */
